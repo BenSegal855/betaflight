@@ -200,6 +200,7 @@ static void hmc5883SpiInit(busDevice_t *busdev)
 
 static bool hmc5883lRead(magDev_t *mag, int16_t *magData)
 {
+    /*
     uint8_t buf[6];
 
     busDevice_t *busdev = &mag->busdev;
@@ -213,7 +214,11 @@ static bool hmc5883lRead(magDev_t *mag, int16_t *magData)
     magData[X] = (int16_t)(buf[0] << 8 | buf[1]);
     magData[Z] = (int16_t)(buf[2] << 8 | buf[3]);
     magData[Y] = (int16_t)(buf[4] << 8 | buf[5]);
+    */
 
+    magData[X] = (int16_t)0;
+    magData[Z] = (int16_t)0;
+    magData[Y] = (int16_t)0;
     return true;
 }
 
